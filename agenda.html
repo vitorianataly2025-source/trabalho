@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Agenda Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>Agenda Escolar</h1>
+            <p>Organize seus compromissos escolares.</p>
+        </div>
+    </header>
+
+    <main class="container agenda-page">
+
+        <nav class="breadcrumb" aria-label="Navegação">
+            <a href="index.html">Início</a>
+            <span aria-hidden="true">/</span>
+            <span>Minha agenda</span>
+        </nav>
+
+        <section class="profile-section">
+            <h2>Minha agenda</h2>
+            <p>Identifique sua agenda para começar.</p>
+
+            <div class="profile-form">
+                <label for="profile-name">Seu nome:</label>
+                <input type="text" id="profile-name" placeholder="Digite seu nome">
+                <button type="button" id="save-profile">Salvar</button>
+            </div>
+
+            <p id="profile-message" class="status-message" aria-live="polite"></p>
+        </section>
+
+        <section class="summary-section" aria-label="Resumo dos compromissos">
+            <article class="summary-card">
+                <span class="summary-label">Total de eventos</span>
+                <strong id="total-events">0</strong>
+            </article>
+
+            <article class="summary-card">
+                <span class="summary-label">Próximos eventos</span>
+                <strong id="upcoming-events">0</strong>
+            </article>
+
+            <article class="summary-card">
+                <span class="summary-label">Eventos deste mês</span>
+                <strong id="month-events">0</strong>
+            </article>
+        </section>
+
+        <section class="events-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Meus compromissos</h2>
+                    <p>Consulte, pesquise ou adicione seus eventos.</p>
+                </div>
+
+                <button type="button" id="new-event">+ Novo evento</button>
+            </div>
+
+            <div class="event-filters">
+                <div class="filter-field">
+                    <label for="search-events">Pesquisar evento</label>
+                    <input type="search" id="search-events"
+                        placeholder="Digite o nome do evento">
+                </div>
+
+                <div class="filter-field">
+                    <label for="filter-category">Categoria</label>
+                    <select id="filter-category">
+                        <option value="todos">Todas as categorias</option>
+                        <option value="Prova">Prova</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Atividade">Atividade</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="event-list" class="event-list" aria-live="polite">
+                <p class="empty-message">Carregando eventos...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <dialog id="event-dialog" class="event-dialog">
+        <form id="event-form">
+            <h2 id="dialog-title">Novo evento</h2>
+
+            <input type="hidden" id="event-id">
+
+            <div class="form-field">
+                <label for="event-title">Nome do evento</label>
+                <input type="text" id="event-title" required maxlength="100">
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="event-date">Data</label>
+                    <input type="date" id="event-date" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="event-time">Horário</label>
+                    <input type="time" id="event-time">
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="event-category">Categoria</label>
+                <select id="event-category" required>
+                    <option value="Prova">Prova</option>
+                    <option value="Trabalho">Trabalho</option>
+                    <option value="Atividade">Atividade</option>
+                    <option value="Evento">Evento</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="event-description">Descrição</label>
+                <textarea id="event-description" rows="4" maxlength="500"></textarea>
+            </div>
+
+            <div class="dialog-actions">
+                <button type="button" id="cancel-dialog">Cancelar</button>
+                <button type="submit">Salvar evento</button>
+            </div>
+
+            <button type="button" id="close-dialog" class="dialog-close"
+                aria-label="Fechar janela">×</button>
+        </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div class="accessibility-widget">
+        <div id="accessibility-menu" class="accessibility-menu" hidden>
+            <button type="button" id="decrease-font" aria-label="Diminuir fonte">A−</button>
+            <button type="button" id="reset-font" aria-label="Restaurar fonte">A</button>
+            <button type="button" id="increase-font" aria-label="Aumentar fonte">A+</button>
+
+            <select id="change-font" aria-label="Tipo de fonte">
+                <option value="default">Fonte</option>
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+            </select>
+
+            <button type="button" id="dark-mode" aria-label="Alternar modo escuro">☾</button>
+            <button type="button" id="high-contrast" aria-label="Alto contraste">Contraste</button>
+            <button type="button" id="read-events">Ler</button>
+            <button type="button" id="stop-reading">Parar</button>
+        </div>
+
+        <button type="button" id="accessibility-toggle"
+            class="accessibility-toggle"
+            aria-expanded="false"
+            aria-controls="accessibility-menu">
+            ♿ Acessibilidade
+        </button>
+    </div>
+
+    <footer class="site-footer">
+        <p>Agenda Escolar Digital Inclusiva</p>
+    </footer>
+
+</body>
+</html>

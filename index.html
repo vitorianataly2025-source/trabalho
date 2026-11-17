@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Escolar Digital Inclusiva</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>Agenda Escolar Digital Inclusiva</h1>
+            <p>Mais organização, autonomia e acessibilidade para sua rotina escolar.</p>
+        </div>
+    </header>
+
+    <main class="container home-page">
+
+    <!-- TELA INICIAL -->
+    <section id="inicio">
+
+        <div class="home-content">
+
+            <div class="welcome-card">
+                <h2>Bem-vindo à Agenda Escolar Digital Inclusiva</h2>
+
+                <p>
+                    Organize seus compromissos escolares de maneira simples,
+                    prática e acessível.
+                </p>
+            </div>
+
+            <div class="home-options">
+
+                <div class="home-option">
+                    <h3>Minha agenda</h3>
+
+                    <p>
+                        Cadastre, consulte e organize seus compromissos escolares.
+                    </p>
+
+                    <a href="agenda.html" class="primary-button">
+                        Acessar agenda
+                    </a>
+
+                </div>
+
+                <div class="home-option">
+                    <h3>Calendário escolar</h3>
+
+                    <p>
+                        Consulte o calendário oficial da Secretaria da Educação
+                        do Estado de São Paulo.
+                    </p>
+
+                    <button type="button" id="seduc-link" class="primary-button">
+                        Consultar calendário SEDUC
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VISUALIZADOR DO PDF -->
+    <section id="area-seduc" class="pdf-section" hidden>
+
+        <div class="section-heading">
+
+            <h2>Calendário Escolar SEDUC 2026</h2>
+
+            <button type="button" id="voltar-inicio">
+                Voltar
+            </button>
+
+        </div>
+
+        <iframe
+            id="visualizador-seduc"
+            class="pdf-viewer"
+            title="Calendário Escolar SEDUC">
+        </iframe>
+
+    </section>
+
+</main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div class="accessibility-widget">
+        <div id="accessibility-menu" class="accessibility-menu" hidden>
+            <button type="button" id="decrease-font" aria-label="Diminuir fonte">A−</button>
+            <button type="button" id="reset-font" aria-label="Restaurar fonte">A</button>
+            <button type="button" id="increase-font" aria-label="Aumentar fonte">A+</button>
+
+            <select id="change-font" aria-label="Tipo de fonte">
+                <option value="default">Fonte</option>
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+            </select>
+
+            <button type="button" id="dark-mode" aria-label="Alternar modo escuro">☾</button>
+            <button type="button" id="high-contrast" aria-label="Alto contraste">Contraste</button>
+            <button type="button" id="read-events">Ler</button>
+            <button type="button" id="stop-reading">Parar</button>
+        </div>
+
+        <button type="button" id="accessibility-toggle"
+            class="accessibility-toggle"
+            aria-expanded="false"
+            aria-controls="accessibility-menu">
+            ♿ Acessibilidade
+        </button>
+    </div>
+
+    <footer class="site-footer">
+        <p>Agenda Escolar Digital Inclusiva</p>
+    </footer>
+
+</body>
+</html>

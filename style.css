@@ -1,0 +1,663 @@
+
+:root {
+    --cor-principal: #168c80;
+    --cor-principal-escura: #126f68;
+    --cor-fundo: #eef7f7;
+    --cor-card: #ffffff;
+    --cor-texto: #193b4a;
+    --cor-secundaria: #647d87;
+    --cor-borda: #dce9ed;
+    --sombra: 0 3px 12px rgba(0, 0, 0, 0.05);
+
+    font-family: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+    color: var(--cor-texto);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* =========================================
+   PADRÃO DOS BOTÕES
+========================================= */
+
+button,
+.primary-button,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--cor-principal);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+button:hover,
+.primary-button:hover,
+.button:hover {
+    background: var(--cor-principal-escura);
+    color: #ffffff;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #e09b00;
+    outline-offset: 3px;
+}
+
+/* HEADER E FOOTER */
+
+.site-header {
+    padding: 28px 0;
+    text-align: center;
+}
+
+.site-header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-header h1 {
+    margin-bottom: 6px;
+    font-size: 1.8rem;
+}
+
+.site-header p {
+    margin-bottom: 0;
+    color: var(--cor-secundaria);
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    background: var(--cor-card);
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-secundaria);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* ÁREA PRINCIPAL */
+
+main {
+    flex: 1;
+}
+
+.home-page,
+.agenda-page {
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+/* =========================================
+   PÁGINA INICIAL
+========================================= */
+
+.welcome-card,
+.home-option,
+.profile-section,
+.summary-card,
+.events-section {
+    padding: 24px;
+    background: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.welcome-card {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.welcome-card h2 {
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--cor-secundaria);
+}
+
+.home-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.home-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-option .primary-button {
+    margin-top: auto;
+}
+
+.home-option p {
+    color: var(--cor-secundaria);
+}
+
+/* =========================================
+   AGENDA
+========================================= */
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.breadcrumb a {
+    color: var(--cor-principal-escura);
+    font-weight: bold;
+}
+
+.profile-section {
+    margin-bottom: 22px;
+}
+
+.profile-section p {
+    color: var(--cor-secundaria);
+}
+
+.profile-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.profile-form label {
+    font-weight: bold;
+}
+
+.profile-form input {
+    width: min(320px, 100%);
+}
+
+.status-message {
+    min-height: 20px;
+    margin: 12px 0 0;
+    font-weight: bold;
+}
+
+.summary-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.summary-card {
+    text-align: center;
+}
+
+.summary-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-secundaria);
+}
+
+.summary-card strong {
+    font-size: 2rem;
+    color: var(--cor-principal-escura);
+}
+
+.events-section {
+    margin-bottom: 22px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    margin-bottom: 0;
+    color: var(--cor-secundaria);
+}
+
+.event-filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.filter-field,
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-field label,
+.form-field label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #cbdadd;
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--cor-texto);
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* CARDS DOS EVENTOS */
+
+.event-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.event-card {
+    padding: 20px;
+    border: 1px solid var(--cor-borda);
+    border-left: 5px solid var(--cor-principal);
+    border-radius: 10px;
+    background: #fbfefe;
+}
+
+.event-card h3 {
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.event-card p {
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.event-category {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e3f6f1;
+    color: #126f68;
+    font-weight: bold;
+}
+
+.event-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.empty-message {
+    padding: 30px;
+    text-align: center;
+    color: var(--cor-secundaria);
+    border: 1px dashed var(--cor-borda);
+    border-radius: 10px;
+}
+
+/* =========================================
+   FORMULÁRIO DE COMPROMISSOS
+========================================= */
+
+.event-dialog {
+    width: min(540px, 92%);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px;
+    border: 0;
+    border-radius: 12px;
+    color: var(--cor-texto);
+}
+
+.event-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.event-dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.event-dialog h2 {
+    margin-bottom: 5px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.dialog-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 4px;
+    font-size: 1.4rem;
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+.accessibility-widget {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.accessibility-toggle {
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+.accessibility-menu {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    background: var(--cor-card);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.accessibility-menu button,
+.accessibility-menu select {
+    width: 100%;
+    min-height: 40px;
+    margin: 0;
+    font-size: 14px !important;
+}
+
+.accessibility-menu select {
+    background: #ffffff;
+    color: var(--cor-texto);
+}
+
+.accessibility-widget,
+.accessibility-widget * {
+    font-size: 14px;
+}
+
+/* =========================================
+   VISUALIZADOR DO CALENDÁRIO SEDUC
+========================================= */
+
+.pdf-section {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.pdf-section .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pdf-section h2 {
+    margin: 0;
+    color: var(--cor-texto);
+}
+
+.pdf-viewer {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: var(--sombra);
+}
+
+/* =========================================
+   MODO ESCURO
+========================================= */
+
+body.dark-mode {
+    --cor-fundo: #171a21;
+    --cor-card: #252b36;
+    --cor-texto: #f4f4f4;
+    --cor-secundaria: #c0cad3;
+    --cor-borda: #46505e;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer,
+body.dark-mode .welcome-card,
+body.dark-mode .home-option,
+body.dark-mode .profile-section,
+body.dark-mode .summary-card,
+body.dark-mode .events-section,
+body.dark-mode .event-card,
+body.dark-mode .accessibility-menu {
+    background: var(--cor-card);
+    color: var(--cor-texto);
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #202631;
+    color: #ffffff;
+    border-color: #687586;
+}
+
+body.dark-mode .event-card {
+    background: #202631;
+}
+
+body.dark-mode .accessibility-menu select {
+    background: #202631;
+    color: #ffffff;
+}
+
+body.dark-mode .pdf-viewer {
+    border-color: var(--cor-borda);
+}
+
+/* =========================================
+   ALTO CONTRASTE
+========================================= */
+
+body.high-contrast {
+    --cor-fundo: #000000;
+    --cor-card: #000000;
+    --cor-texto: #ffffff;
+    --cor-secundaria: #ffffff;
+    --cor-borda: #ffff00;
+}
+
+body.high-contrast .site-header,
+body.high-contrast .site-footer,
+body.high-contrast .welcome-card,
+body.high-contrast .home-option,
+body.high-contrast .profile-section,
+body.high-contrast .summary-card,
+body.high-contrast .events-section,
+body.high-contrast .event-card,
+body.high-contrast .accessibility-menu,
+body.high-contrast .pdf-section {
+    background: #000000;
+    color: #ffffff;
+    border-color: #ffff00;
+}
+
+body.high-contrast a {
+    color: #ffff00;
+    text-decoration: underline;
+}
+
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #ffff00;
+}
+
+body.high-contrast button,
+body.high-contrast .primary-button,
+body.high-contrast .button {
+    background: #ffff00;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 22px 0;
+    }
+
+    .site-header h1 {
+        font-size: 1.45rem;
+    }
+
+    .home-options,
+    .summary-section,
+    .event-filters,
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .profile-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .profile-form input {
+        width: 100%;
+    }
+
+    .dialog-actions {
+        flex-direction: column;
+    }
+
+    .dialog-actions button {
+        width: 100%;
+    }
+
+    .accessibility-widget {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .pdf-section .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pdf-viewer {
+        height: 70vh;
+        min-height: 400px;
+    }
+}
+
+/* =========================================
+   MOVIMENTAÇÃO REDUZIDA
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
